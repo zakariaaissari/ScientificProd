@@ -1,0 +1,25 @@
+<div class="container">
+  <header class="jumbotron">
+    
+  </header>
+</div>
+
+
+<div class="container mb-4">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let publication of publications;">
+    <div class="card">
+      <img class="card-img-top" src="https://cdn.pixabay.com/photo/2015/09/09/20/54/book-933280_960_720.jpg" alt="">
+      <div class="card-body">
+        <h4 class="card-title">{{publication.titre}}</h4>
+        <p class="card-text">{{publication.journal}}</p>
+        <div>
+          <button type="button" class="btn btn-primary">
+            Read About it
+          </button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

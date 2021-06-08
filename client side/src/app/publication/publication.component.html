@@ -1,0 +1,212 @@
+<div class="container">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2>Gestion <b>de Publication</b></h2>
+          </div>
+          <div class="col-sm-6">
+            <a
+              href="#addEmployeeModal"
+              class="btn btn-success"
+              data-toggle="modal"
+              ><i class="material-icons">&#xE147;</i>
+              <span>Ajouter Nouvelle Publication</span></a
+            >
+          </div>
+        </div>
+      </div>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>
+              <span class="custom-checkbox">
+                <input type="checkbox" id="selectAll" />
+                <label for="selectAll"></label>
+              </span>
+            </th>
+            <th>Titre</th>
+            <th>Type</th>
+            <th>Journal</th>
+            <th>Année</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pup of prof">
+            <td>
+              <span class="custom-checkbox">
+                <input
+                  type="checkbox"
+                  id="checkbox1"
+                  name="options[]"
+                  value="pup.id"
+                />
+                <label for="checkbox1"></label>
+              </span>
+            </td>
+            <td>{{ pup.titre }}</td>
+            <td>{{ pup.type_revu }}</td>
+            <td>{{ pup.journal }}</td>
+            <td>{{ pup.annee }}</td>
+            <td>
+              <a class="edit" data-toggle="modal" (click)="update(pup.id)"
+                ><i class="material-icons" data-toggle="tooltip" title="Edit"
+                  >&#xE254;</i
+                ></a
+              >
+              <a class="delete" data-toggle="modal" (click)="delete(pup.id)"
+                ><i class="material-icons" data-toggle="tooltip" title="Delete"
+                  >&#xE872;</i
+                ></a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- Edit Modal HTML -->
+<div id="addEmployeeModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form (ngSubmit)="onSubmit()">
+        <div class="modal-header">
+          <h4 class="modal-title">Ajouter Nouvelle Publication</h4>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-hidden="true"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Titre</label>
+            <input
+              name="data1"
+              [(ngModel)]="data.data1"
+              type="text"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Année</label>
+            <input
+              name="data2"
+              [(ngModel)]="data.data2"
+              type="email"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Journal</label>
+            <input
+              name="data3"
+              [(ngModel)]="data.data3"
+              type="text"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Type</label>
+            <input
+              name="data4"
+              [(ngModel)]="data.data4"
+              type="text"
+              class="form-control"
+              required
+            />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <input
+            type="button"
+            class="btn btn-default"
+            data-dismiss="modal"
+            value="Cancel"
+          />
+          <input type="submit" class="btn btn-success" value="Ajouter" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Edit Modal HTML -->
+<div id="showModule" *ngIf="showCFormation" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form (ngSubmit)="onSubmitEdit()">
+        <div class="modal-header">
+          <h4 class="modal-title">Modifier Publication</h4>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-hidden="true"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Titre</label>
+            <input
+              name="data1"
+              [(ngModel)]="datas.data1"
+              type="text"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Année</label>
+            <input
+              name="data2"
+              [(ngModel)]="datas.data2"
+              type="text"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Type</label>
+            <input
+              name="data3"
+              [(ngModel)]="datas.data3"
+              type="text"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Journal</label>
+            <input
+              name="data4"
+              [(ngModel)]="datas.data4"
+              type="text"
+              class="form-control"
+              required
+            />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <input
+            type="button"
+            class="btn btn-default"
+            data-dismiss="modal"
+            value="Cancel"
+          />
+          <input type="submit" class="btn btn-info" value="Sauvgarder" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
