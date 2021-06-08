@@ -65,3 +65,8 @@ Angular 9.
 
 >Gestion de Auteurs:
 ![gestionauthor](https://user-images.githubusercontent.com/54544125/121165882-e3d10f80-c850-11eb-85bc-e9124c0c134b.PNG)
+
+## Conclusion :
+
+la digitalisation est une stratégie efficace pour faciliter les opérations humaines , c'est pour ça on a décidé de créér cette plateforme avec ces technologies (spring boot / angular)  pour le but de facilite tous les taches d'un administrateur.
+ 
